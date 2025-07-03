@@ -10,11 +10,11 @@
   @foreach($ninjas as $ninja)
     <li>
       {{--Passing a href prop to the card layout component--}}
-      {{-- Must use '' inside of "" link. --}}
+      {{-- Must use '' inside of "". --}}
       {{-- 
-        The :highlight is a dynamic prop. Props are normally passed as strings, even with {{}}, but the : prefix allows you to pass other data types. Still written as string though. 
-      --}} 
-      <x-card href="/ninjas/{{ $ninja['id']}}" :highlight="true">
+        The prefix : allows for non string values to be sent. Still written as a string though. 
+      --}}
+      <x-card href="/ninjas/{{ $ninja['id']}}" :highlight="$ninja['skill'] > 70">
         {{--Using blade's {{}} syntax is like using echo and htmlspecialchars in PHP.--}}
         <h3>{{ $ninja["name"] }}</h3>
       </x-card>
