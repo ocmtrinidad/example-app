@@ -14,9 +14,13 @@ Route::get("/ninjas", function () {
         ["name" => "luigi", "skill" => 45, "id" => 2],
     ];
 
-    // Returns ninjas.index.blade.php from ../resources/views/ninjas/
+    // Returns /ninjas/index.blade.php
     // $greeting is passed to the view with the key "greeting"
     return view("ninjas.index", ["ninjas" => $ninjas, "greeting" => "Hello"]);
+});
+
+Route::get("/ninjas/create", function () {
+    return view("ninjas.create");
 });
 
 // Route to show a specific ninja by ID
