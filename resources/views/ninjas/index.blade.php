@@ -1,21 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{__(":app", ["app" => config("app.name")])}} | Home</title>
-</head>
-<body>
-  <h2>Currently Available Ninjas</h2>
-  <ul>
+{{--
+  x-filename
+  x-layout is a custom Blade component that outputs the content as {{$slot}} in the layout in components/layout.blade.php
+--}}
+<x-layout>
+
+<h2>Currently Available Ninjas</h2>
+
+{{--The @if / @endif blade directive is used to conditionally display content. --}}
+{{--No { } needed--}}
+@if ($greeting)
+  <p>Hi from inside the if statement.</p>
+@endif
+
+{{--$ninjas comes from /routes/web.php--}}
+{{--Using blade's {{}} syntax is like using echo and htmlspecialchars in PHP--}}
+<ul>
+  @foreach($ninjas as $ninja)
     <li>
-      {{--$ninjas comes from web.php--}}
-      {{--Using blade's {{}} syntax is like using echo and htmlspecialchars in PHP--}}
-      <a href="/ninjas/{{$ninjas[0]["id"]}}">{{$ninjas[0]["name"]}}</a>
+      <p>{{$ninja["name"]}}</p>
+      <a href="/ninjas/{{$ninja["id"]}}">View Details</a>
     </li>
-    <li>
-      <a href="/ninjas/{{$ninjas[1]["id"]}}">{{$ninjas[1]["name"]}}</a>
-    </li> 
-  </ul>
-</body>
-</html>
+  @endforeach
+</ul>
+
+</x-layout>
