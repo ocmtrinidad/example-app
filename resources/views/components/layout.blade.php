@@ -7,18 +7,19 @@
   <title>{{__(":app", ["app" => config("app.name")])}}</title>
   @vite('resources/css/app.css')
 </head>
-<body>
+<body class="gray-color flex flex-col items-center">
   
-  <header>
-    <nav>
-      <h1 class="text-red-600">Ninja Network</h1>
+  <header class="bg-white flex justify-center w-full mb-4">
+    <nav class="container flex justify-between items-center py-4">
+      <h1 class="ninja-red-header">Ninja Network</h1>
+      <div class="flex gap-4">
       <a href="/ninjas">All Ninjas</a>
       <a href="/ninjas/create">Create New Ninja</a>
+      </div>
     </nav>
   </header>
 
-  <main class="container">
-  {{-- $slot is a Blade variable that represents the content that will be rendered --}}
+  <main class="container flex flex-col">
     {{$slot}}
   </main>
 </body>

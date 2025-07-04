@@ -2,9 +2,9 @@
 {{-- x-layout is a custom Blade component that outputs the content as {{$slot}} in the layout in components/layout.blade.php. --}}
 <x-layout>
 
-<h2>Currently Available Ninjas</h2>
+<h2 class="mb-4">Currently Available Ninjas</h2>
 
-<ul>
+<ul class="flex flex-col gap-2">
   {{--$ninjas comes from /routes/web.php.--}}
   {{-- @foreach/@endforeach are Blade directives that loop through an array --}}
   @foreach($ninjas as $ninja)

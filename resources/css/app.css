@@ -11,6 +11,14 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* Run npm run dev to see styles */
-body {
+@utility ninja-red-header {
+    @apply text-red-600 font-bold
+}
+
+@utility gray-color{
+    @apply bg-gray-100
+}
+
+@utility ninja-red-button {
+    @apply gray-color p-2 hover:bg-red-600 hover:text-white
 }
