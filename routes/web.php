@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// Import the NinjaController to use its methods in routes.
+use App\Http\Controllers\NinjaController;
 
 Route::get('/', function () {
     // Returns welcome.blade.php from ../resources/views/.
@@ -8,15 +10,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/ninjas", function () {
-    $ninjas = [
-        ["name" => "mario", "skill" => 75, "id" => 1],
-        ["name" => "luigi", "skill" => 45, "id" => 2],
-    ];
-
-    // Returns ninjas array to /ninjas/index.blade.php.
-    return view("ninjas.index", ["ninjas" => $ninjas]);
-});
+// Route to show the list of ninjas.
+// Calls the "index" method of NinjaController.
+// NinjaController::class is the same as the App\Http\Controllers\NinjaController namespace.
+Route::get("/ninjas", [NinjaController::class, "index"]);
 
 Route::get("/ninjas/create", function () {
     return view("ninjas.create");
