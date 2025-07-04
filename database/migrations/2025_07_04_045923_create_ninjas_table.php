@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Creates the ninjas table
         Schema::create('ninjas', function (Blueprint $table) {
             $table->id();
             // Creates the created_at and updated_at columns
