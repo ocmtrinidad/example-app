@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Ninja>
  */
+// Called by Ninja::factory()
 class NinjaFactory extends Factory
 {
     /**
@@ -14,10 +15,15 @@ class NinjaFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    // Creates a new instance of the Ninja model with fake data.
+    // Ninja::factory()->count(n)->create() to create n instances.
     public function definition(): array
     {
         return [
-            //
+            // The fake() function is provided by the Faker library, which generates random data.
+            "name" => fake()->name(),
+            "skill" => fake()->numberBetween(0, 100),
+            "bio" => fake()->realText(500)
         ];
     }
 }
