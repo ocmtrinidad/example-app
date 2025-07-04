@@ -21,8 +21,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        // Calls seeder classes and runs the run() method.
+        // Calls seeder classes and runs their run() method.
         $this->call([
+            // Calls the NinjaSeeder class.
             NinjaSeeder::class
         ]);
     }
