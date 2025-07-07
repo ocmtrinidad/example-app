@@ -18,9 +18,18 @@ class NinjaController extends Controller
         return view("ninjas.index", ["ninjas" => $ninjas]);
     }
 
-    public function show($id) {}
+    public function create()
+    {
+        return view("ninjas.create");
+    }
 
-    public function create() {}
+    public function show($id)
+    {
+        // Finds a ninja by its ID. If not found, it will throw a 404 error.
+        $ninja = Ninja::findOrFail($id);
+
+        return view("ninjas.show", ["ninja" => $ninja]);
+    }
 
     public function store() {}
 }
