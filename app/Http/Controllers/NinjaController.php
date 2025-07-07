@@ -42,7 +42,7 @@ class NinjaController extends Controller
     public function store(StorePostRequestNinja $request)
     {
         // Validates the request data using the rules defined in StorePostRequestNinja.
-        // If validation fails, it will automatically redirect back with errors.
+        // If validation fails, it will automatically recreate form page with errors.
         $validated = $request->validated();
 
         // Creates a new ninja in the database with the validated data.
