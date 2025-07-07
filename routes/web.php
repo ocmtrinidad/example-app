@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// Import the NinjaController to use its methods in routes.
+// Import the NinjaController to use its methods in routes. Use as NinjaController::class.
 use App\Http\Controllers\NinjaController;
 
 Route::get('/', function () {
@@ -11,11 +11,10 @@ Route::get('/', function () {
 });
 
 // Calls the "index" method of NinjaController in the App\Http\Controllers folder.
-// NinjaController::class is the same as the App\Http\Controllers\NinjaController namespace.
-Route::get("/ninjas", [NinjaController::class, "index"]);
+// ->name("ninjas.index") creates a named route that allows you to call this route by name instead of destination.
+Route::get("/ninjas", [NinjaController::class, "index"])->name("ninjas.index");
 
-Route::get("/ninjas/create", [NinjaController::class, "create"]);
+Route::get("/ninjas/create", [NinjaController::class, "create"])->name("ninjas.create");
 
-// Route to show a specific ninja by ID.
 // The {id} is a route parameter that will be passed to the function as $id.
-Route::get("/ninjas/{id}", [NinjaController::class, "show"]);
+Route::get("/ninjas/{id}", [NinjaController::class, "show"])->name("ninjas.show");
