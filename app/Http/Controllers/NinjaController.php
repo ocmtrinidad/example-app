@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // Import the Ninja model to interact with the database.
 use App\Models\Ninja;
+use App\Models\Dojo;
 use Illuminate\Http\Request;
 
 class NinjaController extends Controller
@@ -23,7 +24,8 @@ class NinjaController extends Controller
 
     public function create()
     {
-        return view("ninjas.create");
+        $dojos = Dojo::all();
+        return view("ninjas.create", ["dojos" => $dojos]);
     }
 
     public function show($id)
