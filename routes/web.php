@@ -18,3 +18,5 @@ Route::get("/ninjas/create", [NinjaController::class, "create"])->name("ninjas.c
 
 // The {id} is a route parameter that will be passed to the function as $id.
 Route::get("/ninjas/{id}", [NinjaController::class, "show"])->name("ninjas.show");
+
+Route::post("/ninjas", [NinjaController::class, "store"])->name("ninjas.store");
