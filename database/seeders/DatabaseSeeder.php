@@ -23,7 +23,9 @@ class DatabaseSeeder extends Seeder
 
         // Calls seeder classes and runs their run() method.
         $this->call([
-            // Calls the NinjaSeeder class.
+            // DojoSeeder::class before NinjaSeeder::class because Ninja model relies on Dojo model for dojo_id foreign key.
+            // If Dojo migration file was created after Ninja migration file, then change its timestamp.
+            DojoSeeder::class,
             NinjaSeeder::class
         ]);
     }

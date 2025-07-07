@@ -12,7 +12,9 @@ class Ninja extends Model
     protected $fillable = [
         "name",
         "skill",
-        "bio"
+        "bio",
+        // The dojo_id is a foreign key that references the Dojo model.
+        "dojo_id",
     ];
 
     /** @use HasFactory<\Database\Factories\NinjaFactory> */

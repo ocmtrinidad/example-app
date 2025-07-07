@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string("name");
             $table->integer("skill");
             $table->text("bio");
+            // foreignId() creates a foreign key called dojo_id.
+            // constrained() ensures that the dojo_id must exist in the dojos table.
+            // onDelete('cascade') ensures that if a Dojo is deleted, all associated Ninjas are also deleted.
+            $table->foreignId("dojo_id")->constrained()->onDelete('cascade');
         });
     }
 
