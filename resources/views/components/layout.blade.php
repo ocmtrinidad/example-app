@@ -13,8 +13,9 @@
     <nav class="container flex justify-between items-center py-4">
       <h1 class="header-one ninja-red-color">Ninja Network</h1>
       <div class="flex gap-4">
-      <a href="/ninjas">All Ninjas</a>
-      <a href="/ninjas/create">Create New Ninja</a>
+      {{-- route('name') calls a named route. --}}
+      <a href="{{route('ninjas.index')}}">All Ninjas</a>
+      <a href="{{route('ninjas.create')}}">Create New Ninja</a>
       </div>
     </nav>
   </header>

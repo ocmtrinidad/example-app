@@ -2,7 +2,7 @@
 {{-- x-layout is a custom Blade component that outputs the content as {{$slot}} in the layout in components/layout.blade.php. --}}
 <x-layout>
 
-<h2 class="mb-4">Currently Available Ninjas</h2>
+<h2 class="header-two mb-4">Currently Available Ninjas</h2>
 
 <ul class="flex flex-col gap-2">
   {{--$ninjas comes from /routes/web.php.--}}
@@ -10,11 +10,11 @@
   @foreach($ninjas as $ninja)
     <li>
       {{--Passing a href prop to the card layout component--}}
-      {{-- Must use '' inside of "". --}}
+      {{-- route('name', url parameter) --}}
       {{-- 
         The prefix : allows for non string values to be sent. Still written as a string though. 
       --}}
-      <x-card href="/ninjas/{{ $ninja->id }}" :highlight="$ninja->skill > 70">
+      <x-card href="{{route('ninjas.show', $ninja->id)}}" :highlight="$ninja->skill > 70">
         {{--Using blade's {{}} syntax is like using echo and htmlspecialchars in PHP.--}}
         <h3>{{ $ninja->name }}</h3>
       </x-card>
