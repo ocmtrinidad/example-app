@@ -13,7 +13,7 @@ class NinjaController extends Controller
         // Fetches ninjas from the database as an array.
         // Ninja::all() would return all ninjas.
         // Ninja::orderBy(column_name, direction)->get() to fetch ninjas in order.
-        // paginate(10) limits the results to 10 per page.
+        // ->paginate(n) OR ::paginate(n) limits the results to 10 per page.
         $ninjas = Ninja::orderBy("created_at", "desc")->paginate(10);
         // Returns ninjas array to /ninjas/index.blade.php.
         return view("ninjas.index", ["ninjas" => $ninjas]);
