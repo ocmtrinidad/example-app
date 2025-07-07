@@ -13,10 +13,14 @@ class Ninja extends Model
         "name",
         "skill",
         "bio",
-        // The dojo_id is a foreign key that references the Dojo model.
-        "dojo_id",
     ];
 
     /** @use HasFactory<\Database\Factories\NinjaFactory> */
     use HasFactory;
+
+    public function dojo()
+    {
+        // This defines a relationship where a Ninja belongs to one Dojo.
+        return $this->belongsTo(Dojo::class);
+    }
 }

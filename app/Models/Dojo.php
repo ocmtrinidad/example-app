@@ -14,4 +14,10 @@ class Dojo extends Model
     ];
     /** @use HasFactory<\Database\Factories\DojoFactory> */
     use HasFactory;
+
+    public function ninjas()
+    {
+        // This defines a relationship where a Dojo has many Ninjas.
+        return $this->hasMany(Ninja::class);
+    }
 }
