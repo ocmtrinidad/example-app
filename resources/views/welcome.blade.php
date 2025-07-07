@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="text-center px-8 py-12">
-    <h1 class="text-center text-lg ninja-red-header mb-2">{{ __('Welcome to :app', ['app' => config('app.name')]) }}</h1>
+    <h1 class="header-one ninja-red-color text-center mb-2">{{ __('Welcome to :app', ['app' => config('app.name')]) }}</h1>
     <a href="/ninjas" class="ninja-red-button">Find Ninjas!</a>
 </body>
 </html>

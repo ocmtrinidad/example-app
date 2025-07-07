@@ -11,7 +11,7 @@
   
   <header class="bg-white flex justify-center w-full mb-4">
     <nav class="container flex justify-between items-center py-4">
-      <h1 class="ninja-red-header">Ninja Network</h1>
+      <h1 class="header-one ninja-red-color">Ninja Network</h1>
       <div class="flex gap-4">
       <a href="/ninjas">All Ninjas</a>
       <a href="/ninjas/create">Create New Ninja</a>
