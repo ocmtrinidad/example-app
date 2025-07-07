@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@source "../views";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -11,14 +10,22 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-@utility ninja-red-header {
-    @apply text-red-600 font-bold
+@utility ninja-red-color {
+    @apply text-red-600
 }
 
 @utility gray-color{
-    @apply bg-gray-100
+    @apply bg-gray-200
 }
 
 @utility ninja-red-button {
     @apply gray-color p-2 hover:bg-red-600 hover:text-white
+}
+
+@utility header-one {
+    @apply text-2xl font-bold;
+}
+
+@utility header-two {
+    @apply text-lg font-bold;
 }
