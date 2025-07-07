@@ -11,9 +11,10 @@ class NinjaController extends Controller
     public function index()
     {
         // Fetches ninjas from the database as an array.
-        // Ninja::all() would return all ninjas, but we want to order them by creation date.
-        // Using orderBy(column_name, direction).
-        $ninjas = Ninja::orderBy("created_at", "desc")->get();
+        // Ninja::all() would return all ninjas.
+        // Ninja::orderBy(column_name, direction)->get() to fetch ninjas in order.
+        // paginate(10) limits the results to 10 per page.
+        $ninjas = Ninja::orderBy("created_at", "desc")->paginate(10);
         // Returns ninjas array to /ninjas/index.blade.php.
         return view("ninjas.index", ["ninjas" => $ninjas]);
     }

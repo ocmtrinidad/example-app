@@ -4,7 +4,7 @@
 
 <h2 class="header-two mb-4">Currently Available Ninjas</h2>
 
-<ul class="flex flex-col gap-2">
+<ul class="flex flex-col gap-2 mb-4">
   {{--$ninjas comes from /routes/web.php.--}}
   {{-- @foreach/@endforeach are Blade directives that loop through an array --}}
   @foreach($ninjas as $ninja)
@@ -21,5 +21,8 @@
     </li>
   @endforeach
 </ul>
+
+{{-- ->links() displays pagination links automatically created by Laravel --}}
+{{$ninjas->links()}}
 
 </x-layout>
