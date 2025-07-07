@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 // Import the Ninja model to interact with the database.
+
+use App\Http\Requests\StorePostRequestNinja;
 use App\Models\Ninja;
 use App\Models\Dojo;
 use Illuminate\Http\Request;
@@ -36,5 +38,16 @@ class NinjaController extends Controller
         return view("ninjas.show", ["ninja" => $ninja]);
     }
 
-    public function store() {}
+    // StorePostRequestNinja is a custom request class that handles validation that was created with `php artisan make:request StorePostRequestNinja`.
+    public function store(StorePostRequestNinja $request)
+    {
+        // Validates the request data using the rules defined in StorePostRequestNinja.
+        // If validation fails, it will automatically redirect back with errors.
+        $validated = $request->validated();
+
+        // Creates a new ninja in the database with the validated data.
+        Ninja::create($validated);
+
+        return redirect()->route("ninjas.index");
+    }
 }
