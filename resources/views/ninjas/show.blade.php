@@ -1,5 +1,5 @@
 <x-layout>
 
-  <h2>Ninja id - {{$id}}</h2>
+  <h2>{{$ninja->name}}</h2>
 
 </x-layout>

@@ -14,9 +14,9 @@
       {{-- 
         The prefix : allows for non string values to be sent. Still written as a string though. 
       --}}
-      <x-card href="/ninjas/{{ $ninja['id']}}" :highlight="$ninja['skill'] > 70">
+      <x-card href="/ninjas/{{ $ninja->id }}" :highlight="$ninja->skill > 70">
         {{--Using blade's {{}} syntax is like using echo and htmlspecialchars in PHP.--}}
-        <h3>{{ $ninja["name"] }}</h3>
+        <h3>{{ $ninja->name }}</h3>
       </x-card>
     </li>
   @endforeach
