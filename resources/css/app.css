@@ -29,3 +29,7 @@
 @utility header-two {
     @apply text-lg font-bold;
 }
+
+@utility header-three {
+    @apply text-base font-bold;
+}
