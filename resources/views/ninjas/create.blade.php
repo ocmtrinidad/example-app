@@ -1,6 +1,6 @@
 <x-layout>
 
-  <form action="" method="post" class="flex flex-col gap-4">
+  <form action="{{route('ninjas.store')}}" method="post" class="flex flex-col gap-4">
     {{-- CSRF Protection. USE FOR EVERY FORM --}}
     @csrf
 
