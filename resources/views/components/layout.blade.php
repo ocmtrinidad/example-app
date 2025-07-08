@@ -24,11 +24,13 @@
       {{-- route('name') calls a named route. --}}
       <a href="{{route('ninjas.index')}}">All Ninjas</a>
       <a href="{{route('ninjas.create')}}">Create New Ninja</a>
+      <a href="{{route('dojos.index')}}">All Dojos</a>
+      <a href="{{route('dojos.create')}}">Create New Dojo</a>
       </div>
     </nav>
   </header>
 
-  <main class="container flex flex-col">
+  <main class="container flex flex-col gap-4">
     {{$slot}}
   </main>
 </body>

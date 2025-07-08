@@ -2,9 +2,9 @@
 {{-- x-layout is a custom Blade component that outputs the content as {{$slot}} in the layout in components/layout.blade.php. --}}
 <x-layout>
 
-<h2 class="header-two mb-4">Currently Available Ninjas</h2>
+<h2 class="header-two">Currently Available Ninjas</h2>
 
-<ul class="flex flex-col gap-2 mb-4">
+<ul class="flex flex-col gap-2">
   @foreach($ninjas as $ninja)
     <li>
       {{--Passing a href prop to the card layout component--}}

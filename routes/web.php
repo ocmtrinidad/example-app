@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 // Import the NinjaController to use its methods in routes. Use as NinjaController::class.
 use App\Http\Controllers\NinjaController;
+use App\Http\Controllers\DojoController;
 
 Route::get('/', function () {
     // Returns welcome.blade.php from ../resources/views/.
@@ -23,3 +24,13 @@ Route::get("/ninjas/{ninja}", [NinjaController::class, "show"])->name("ninjas.sh
 Route::post("/ninjas", [NinjaController::class, "store"])->name("ninjas.store");
 
 Route::delete("/ninjas/{ninja}", [NinjaController::class, "destroy"])->name("ninjas.destroy");
+
+Route::get("/dojos", [DojoController::class, "index"])->name("dojos.index");
+
+Route::get("/dojos/create", [DojoController::class, "create"])->name("dojos.create");
+
+Route::get("/dojos/{dojo}", [DojoController::class, "show"])->name("dojos.show");
+
+Route::post("/dojos", [DojoController::class, "store"])->name("dojos.store");
+
+Route::delete("/dojos/{dojo}", [DojoController::class, "destroy"])->name("dojos.destroy");
