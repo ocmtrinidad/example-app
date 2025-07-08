@@ -5,8 +5,6 @@
 <h2 class="header-two mb-4">Currently Available Ninjas</h2>
 
 <ul class="flex flex-col gap-2 mb-4">
-  {{--$ninjas comes from /routes/web.php.--}}
-  {{-- @foreach/@endforeach are Blade directives that loop through an array --}}
   @foreach($ninjas as $ninja)
     <li>
       {{--Passing a href prop to the card layout component--}}
@@ -15,7 +13,6 @@
         The prefix : allows for non string values to be sent. Still written as a string though. 
       --}}
       <x-card href="{{route('ninjas.show', $ninja->id)}}" :highlight="$ninja->skill > 70">
-        {{--Using blade's {{}} syntax is like using echo and htmlspecialchars in PHP.--}}
         <div>
           <h3 class="header-three">{{ $ninja->name }}</h3>
           <p>{{$ninja->dojo->name}}</p>
