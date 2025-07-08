@@ -26,6 +26,7 @@ class NinjaController extends Controller
 
     public function create()
     {
+        // Fetches all dojos to populate the dojo select in the create form.
         $dojos = Dojo::all();
         return view("ninjas.create", ["dojos" => $dojos]);
     }
