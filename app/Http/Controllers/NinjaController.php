@@ -31,12 +31,11 @@ class NinjaController extends Controller
         return view("ninjas.create", ["dojos" => $dojos]);
     }
 
-    // $id is a route parameter that will be automatically passed to the function as $id.
-    public function show($id)
+    // $ninja is an instance of the Ninja model that is automatically fetched by Laravel's route model binding using the id that was passed as a route parameter.
+    public function show(Ninja $ninja)
     {
-        // findOrFail() finds a ninja by its ID. If not found, it will throw a 404 error.
-        $ninja = Ninja::with("dojo")->findOrFail($id);
-
+        // Loads the associated dojo for the ninja.
+        $ninja->load("dojo");
         return view("ninjas.show", ["ninja" => $ninja]);
     }
 
@@ -46,19 +45,15 @@ class NinjaController extends Controller
         // Validates the request data using the rules defined in StorePostRequestNinja.
         // If validation fails, it will automatically recreate form page with errors.
         $validated = $request->validated();
-
         // Creates a new ninja in the database with the validated data.
         Ninja::create($validated);
-
         // Redirects to the ninjas index page with a message and a "success" key.
         return redirect()->route("ninjas.index")->with("success", "Ninja Created!");
     }
 
-    public function destroy($id)
+    public function destroy(Ninja $ninja)
     {
-        $ninja = Ninja::findOrFail($id);
         $ninja->delete();
-
         return redirect()->route("ninjas.index")->with("success", "Ninja Deleted!");
     }
 }
