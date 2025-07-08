@@ -49,7 +49,8 @@ class NinjaController extends Controller
         // Creates a new ninja in the database with the validated data.
         Ninja::create($validated);
 
-        return redirect()->route("ninjas.index");
+        // Redirects to the ninjas index page with a message and a "success" key.
+        return redirect()->route("ninjas.index")->with("success", "Ninja Created!");
     }
 
     public function destroy($id)
@@ -57,6 +58,6 @@ class NinjaController extends Controller
         $ninja = Ninja::findOrFail($id);
         $ninja->delete();
 
-        return redirect()->route("ninjas.index");
+        return redirect()->route("ninjas.index")->with("success", "Ninja Deleted!");
     }
 }

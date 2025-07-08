@@ -8,6 +8,12 @@
   @vite('resources/css/app.css')
 </head>
 <body class="gray-color flex flex-col items-center">
+  {{-- session() is a Blade directive to check if the session has a "success" key --}}
+  @if(session("success"))
+    <div class="p-4 text-center bg-green-50 text-green-500 font-bold w-full">
+      {{session("success")}}
+    </div>
+  @endif
   
   <header class="bg-white flex justify-center w-full mb-4">
     <nav class="container flex justify-between items-center py-4">
