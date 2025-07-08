@@ -31,6 +31,7 @@ class NinjaController extends Controller
         return view("ninjas.create", ["dojos" => $dojos]);
     }
 
+    // $id is a route parameter that will be automatically passed to the function as $id.
     public function show($id)
     {
         // findOrFail() finds a ninja by its ID. If not found, it will throw a 404 error.
