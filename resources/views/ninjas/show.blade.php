@@ -17,4 +17,12 @@
     <p>{{$ninja->dojo->description}}</p>
   </div>
 
+{{-- Forms only allow GET or POST methods. Use Blade directive @method("DELETE"). --}}
+  <form action="{{route('ninjas.destroy', $ninja->id)}}" method="POST">
+    @csrf
+    {{-- Switches method from POST to DELETE --}}
+    @method("DELETE")
+  <button class="ninja-red-button bg-white">Delete Ninja</button>
+  </form>
+
 </x-layout>
