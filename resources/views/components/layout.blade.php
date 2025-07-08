@@ -17,7 +17,9 @@
   
   <header class="bg-white flex justify-center w-full mb-4">
     <nav class="container flex justify-between items-center py-4">
-      <h1 class="header-one ninja-red-color">Ninja Network</h1>
+      <h1 class="header-one ninja-red-color">
+        <a href="/">Ninja Network</a>
+      </h1>
       <div class="flex gap-4">
       {{-- route('name') calls a named route. --}}
       <a href="{{route('ninjas.index')}}">All Ninjas</a>
