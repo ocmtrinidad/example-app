@@ -10,7 +10,7 @@
     <input class="form-input" type="text" name="location" id="location" value="{{old('location')}}" required>
 
     <label for="description">Dojo Description</label>
-    <textarea class="form-input" name="description" id="description" rows="5" required>{{old('description')}}
+    <textarea class="form-input max-h-60" name="description" id="description" rows="5" required>{{old('description')}}
     </textarea>
 
     <button class="ninja-red-button bg-white w-max">Create Dojo</button>

@@ -13,7 +13,7 @@
     <input class="form-input" type="number" name="skill" id="skill" value="{{old('skill')}}" required>
 
     <label for="bio">Biography</label>
-    <textarea class="form-input" name="bio" id="bio" rows="5" required>{{old('bio')}}</textarea>
+    <textarea class="form-input max-h-60" name="bio" id="bio" rows="5" required>{{old('bio')}}</textarea>
 
     <label for="dojo_id">Dojo:</label>
     <select class="form-input" name="dojo_id" id="dojo_id" required>
