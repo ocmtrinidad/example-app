@@ -5,14 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NinjaController;
 use App\Http\Controllers\DojoController;
 
-Route::get('/', function () {
-    // Returns welcome.blade.php from ../resources/views/.
-    // Just welcome as Laravel automatically looks for .blade.php files.
-    return view('welcome');
-});
-
 // Calls the "index" method of NinjaController in the App\Http\Controllers folder.
 // ->name("ninjas.index") creates a named route that allows you to call this route by name instead of destination.
+Route::get('/', [NinjaController::class, "index"])->name("ninjas.index");
+
 Route::get("/ninjas", [NinjaController::class, "index"])->name("ninjas.index");
 
 Route::get("/ninjas/create", [NinjaController::class, "create"])->name("ninjas.create");
