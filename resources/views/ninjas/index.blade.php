@@ -14,8 +14,12 @@
       --}}
       <x-card href="{{route('ninjas.show', $ninja->id)}}" :highlight="$ninja->skill > 70">
         <div>
-          <h3 class="header-three">{{ $ninja->name }}</h3>
-          <p>{{$ninja->dojo->name}}</p>
+          <h3 class="header-three">
+            <a href="{{route('ninjas.show', $ninja->id)}}">{{ $ninja->name }}</a>
+          </h3>
+          <p>
+          <a href="{{route('dojos.show', $ninja->dojo->id)}}">{{$ninja->dojo->name}}</a>
+          </p>
         </div>
         
       </x-card>
