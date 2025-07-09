@@ -16,7 +16,7 @@ class DojoController extends Controller
 
     public function show(Dojo $dojo)
     {
-        // Load the ninjas relation for the dojo and order them by created_at in descending order then paginate.
+        // Load the dojo with its one to many relationship with ninjas.
         $dojo->setRelation("ninjas", $dojo->ninjas()->orderBy("created_at", "desc")->paginate(10));
         return view("dojos.show", ["dojo" => $dojo]);
     }
