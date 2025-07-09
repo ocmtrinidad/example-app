@@ -15,8 +15,8 @@
     </div>
   @endif
   
-  <header class="bg-white flex justify-center w-full mb-4">
-    <nav class="container flex justify-between items-center py-4">
+  <header class="bg-white flex justify-center w-full">
+    <nav class="container flex justify-between items-center p-4 max-w-4xl">
       <h1 class="header-one ninja-red-color">
         <a href="/">Ninja Network</a>
       </h1>
@@ -30,7 +30,7 @@
     </nav>
   </header>
 
-  <main class="container flex flex-col gap-4">
+  <main class="container flex flex-col gap-4 p-4 max-w-4xl">
     {{$slot}}
   </main>
 </body>
