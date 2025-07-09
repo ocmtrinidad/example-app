@@ -14,7 +14,9 @@
       <li>
         <x-card href="{{ route('ninjas.show', $ninja->id) }}">
           <div>
-            <h3 class="header-three">{{ $ninja->name }}</h3>
+            <h3 class="header-three">
+              <a href="{{route('ninjas.show', $ninja->id)}}">{{ $ninja->name }}</a>
+            </h3>
             <p>Skill Level: <strong>{{ $ninja->skill }}</strong></p>
           </div>
         </x-card>
