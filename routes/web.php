@@ -9,7 +9,7 @@ use App\Http\Controllers\DojoController;
 // ->name("ninjas.index") creates a named route that allows you to call this route by name instead of destination.
 Route::get('/', [NinjaController::class, "index"])->name("ninjas.index");
 
-Route::get("/ninjas", [NinjaController::class, "index"])->name("ninjas.index");
+// Route::get("/ninjas", [NinjaController::class, "index"])->name("ninjas.index");
 
 Route::get("/ninjas/create", [NinjaController::class, "create"])->name("ninjas.create");
 
@@ -17,7 +17,7 @@ Route::get("/ninjas/create", [NinjaController::class, "create"])->name("ninjas.c
 // The "show" method will receive the Ninja instance as $ninja.
 Route::get("/ninjas/{ninja}", [NinjaController::class, "show"])->name("ninjas.show");
 
-Route::post("/ninjas", [NinjaController::class, "store"])->name("ninjas.store");
+Route::post("/", [NinjaController::class, "store"])->name("ninjas.store");
 
 Route::delete("/ninjas/{ninja}", [NinjaController::class, "destroy"])->name("ninjas.destroy");
 
