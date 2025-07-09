@@ -7,7 +7,9 @@
       <li>
         <x-card href="{{route('dojos.show', $dojo->id)}}">
           <div>
-            <h3 class="header-three">{{ $dojo->name }}</h3>
+            <h3 class="header-three">
+              <a href="{{route('dojos.show', $dojo->id)}}">{{ $dojo->name }}</a>
+            </h3>
             <p>{{$dojo->location}}</p>
           </div>
         </x-card>
