@@ -1,12 +1,11 @@
 <x-layout>
   <h2 class="header-two">{{ $dojo->name }}</h2>
 
-  <p><strong>Location:</strong> {{ $dojo->location }}</p>
-
-<div>
-  <p><strong>Description:</strong></p>
-  <p>{{ $dojo->description }}</p>
-</div>
+  <div class=" flex flex-col gap-2 bg-gray-200 p-4">
+    <p><strong>Location:</strong> {{ $dojo->location }}</p>
+    <p><strong>Description:</strong></p>
+    <p>{{ $dojo->description }}</p>
+  </div>
 
   <h3 class="header-three">Ninjas in this dojo:</h3>
   <ul class="flex flex-col gap-2">

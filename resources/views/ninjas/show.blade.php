@@ -1,7 +1,8 @@
 <x-layout>
 
+  <h2 class="header-two">{{$ninja->name}}</h2>
+
   <div class="flex flex-col gap-2 bg-gray-200 p-4">
-    <h2 class="header-two">{{$ninja->name}}</h2>
     <p><strong>Skill level: </strong>{{$ninja->skill}}</p>
     <div>
       <p><strong>About me: </strong></p>
