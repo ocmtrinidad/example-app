@@ -30,9 +30,9 @@
         
         {{-- Only shows to logged in users. --}}
         @auth
-          <span class="border-r-2 pr-2">
+          <div class="border-r-2 pr-2">
           Hi, {{Auth::user()->name}}
-          </span>
+          </div>
 
           <a class="ninja-red-button gray-color" href="{{route('ninjas.create')}}">Create Ninja</a>
           <a class="ninja-red-button gray-color" href="{{route('dojos.create')}}">Create Dojo</a>
