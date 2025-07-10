@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -31,7 +33,24 @@ class AuthController extends Controller
         return redirect()->route("ninjas.index");
     }
 
-    public function login() {}
+    public function login(LoginRequest $request)
+    {
+        $validated = $request->validated();
+
+        // Attempt to log in the user with the provided credentials. Returns true or false.
+        // Not Auth:login() because we want to validate the credentials first.
+        if (Auth::attempt($validated)) {
+            // Regenerate the session to prevent session fixation attacks.
+            $request->session()->regenerate();
+
+            return redirect()->route("ninjas.index");
+        }
+
+        // If the credentials are incorrect (Auth::attempt), Laravel passes error message to /login.
+        throw ValidationException::withMessages([
+            "credentials" => "Sorry, incorrect credentials."
+        ]);
+    }
 
     public function logout(Request $request)
     {
