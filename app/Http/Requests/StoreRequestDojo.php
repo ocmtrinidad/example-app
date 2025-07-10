@@ -22,7 +22,7 @@ class StoreRequestDojo extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required|string|max:255",
+            "name" => "required|string|max:255|unique:dojos",
             "location" => "required|string|max:255",
             "description" => "required|string|min:20|max:1000"
         ];
