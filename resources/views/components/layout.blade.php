@@ -21,7 +21,6 @@
         <a href="/">Ninja Network</a>
       </h1>
       <div class="flex items-center gap-4">
-        {{-- <a href="{{route('dojos.index')}}">All Dojos</a> --}}
 
         {{-- Only shows to logged out users. --}}
         @guest
@@ -37,6 +36,8 @@
 
           <a href="{{route('ninjas.create')}}">Create Ninja</a>
           <a href="{{route('dojos.create')}}">Create Dojo</a>
+
+          {{-- <a href="{{route('dojos.index')}}">All Dojos</a> --}}
 
           <form action="{{route('logout')}}" method="post">
             @csrf
