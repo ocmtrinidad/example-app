@@ -21,18 +21,29 @@
         <a href="/">Ninja Network</a>
       </h1>
       <div class="flex items-center gap-4">
-        {{-- route('name') calls a named route. --}}
-        <a href="{{route('ninjas.index')}}">All Ninjas</a>
-        <a href="{{route('ninjas.create')}}">Create New Ninja</a>
         {{-- <a href="{{route('dojos.index')}}">All Dojos</a> --}}
-        {{-- <a href="{{route('dojos.create')}}">Create New Dojo</a> --}}
-        <a class="ninja-red-button gray-color" href="{{route('show.register')}}">Register</a>
-        <a class="ninja-red-button gray-color" href="{{route('show.login')}}">Login</a>
 
-        <form action="{{route('logout')}}" method="post">
-          @csrf
-          <button type="submit" class="ninja-red-button gray-color">Logout</button>
-        </form>
+        {{-- Only shows to logged out users. --}}
+        @guest
+          <a class="ninja-red-button gray-color" href="{{route('show.register')}}">Register</a>
+          <a class="ninja-red-button gray-color" href="{{route('show.login')}}">Login</a>
+        @endguest
+        
+        {{-- Only shows to logged in users. --}}
+        @auth
+          <span class="border-r-2 pr-2">
+          Hi, {{Auth::user()->name}}
+          </span>
+
+          <a href="{{route('ninjas.create')}}">Create New Ninja</a>
+          <a href="{{route('dojos.create')}}">Create New Dojo</a>
+
+          <form action="{{route('logout')}}" method="post">
+            @csrf
+            <button type="submit" class="ninja-red-button gray-color">Logout</button>
+          </form>
+        @endauth
+        
       </div>
     </nav>
   </header>
