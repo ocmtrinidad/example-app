@@ -34,8 +34,8 @@
           Hi, {{Auth::user()->name}}
           </span>
 
-          <a href="{{route('ninjas.create')}}">Create Ninja</a>
-          <a href="{{route('dojos.create')}}">Create Dojo</a>
+          <a class="ninja-red-button gray-color" href="{{route('ninjas.create')}}">Create Ninja</a>
+          <a class="ninja-red-button gray-color" href="{{route('dojos.create')}}">Create Dojo</a>
 
           {{-- <a href="{{route('dojos.index')}}">All Dojos</a> --}}
 
