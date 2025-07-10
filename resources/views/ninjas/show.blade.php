@@ -1,6 +1,6 @@
 <x-layout>
 
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-2 bg-gray-200 p-4">
     <h2 class="header-two">{{$ninja->name}}</h2>
     <p><strong>Skill level: </strong>{{$ninja->skill}}</p>
     <div>
@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="my-4 flex flex-col gap-2 bg-white p-4">
+  <div class="flex flex-col gap-2 bg-white p-4">
     <h2 class="header-two">Dojo Information</h2>
     <p>
       <strong>Dojo Name: </strong>
