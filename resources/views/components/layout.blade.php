@@ -35,8 +35,8 @@
           Hi, {{Auth::user()->name}}
           </span>
 
-          <a href="{{route('ninjas.create')}}">Create New Ninja</a>
-          <a href="{{route('dojos.create')}}">Create New Dojo</a>
+          <a href="{{route('ninjas.create')}}">Create Ninja</a>
+          <a href="{{route('dojos.create')}}">Create Dojo</a>
 
           <form action="{{route('logout')}}" method="post">
             @csrf
