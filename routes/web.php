@@ -8,29 +8,21 @@ use App\Http\Controllers\DojoController;
 
 Route::get("/register", [AuthController::class, "showRegister"])->name("show.register");
 Route::get("/login", [AuthController::class, "showLogin"])->name("show.login");
+Route::post("/register", [AuthController::class, "register"])->name("register");
+Route::post("/login", [AuthController::class, "login"])->name("login");
 
 // Calls the "index" method of NinjaController in the App\Http\Controllers folder.
 // ->name("ninjas.index") creates a named route that allows you to call this route by name instead of destination.
 Route::get('/', [NinjaController::class, "index"])->name("ninjas.index");
-
-// Route::get("/ninjas", [NinjaController::class, "index"])->name("ninjas.index");
-
 Route::get("/ninjas/create", [NinjaController::class, "create"])->name("ninjas.create");
-
 // Using route model binding, Laravel will automatically fetch the Ninja model instance based on the {ninja} parameter, which is an id.
 // The "show" method will receive the Ninja instance as $ninja.
 Route::get("/ninjas/{ninja}", [NinjaController::class, "show"])->name("ninjas.show");
-
 Route::post("/", [NinjaController::class, "store"])->name("ninjas.store");
-
 Route::delete("/ninjas/{ninja}", [NinjaController::class, "destroy"])->name("ninjas.destroy");
 
 Route::get("/dojos", [DojoController::class, "index"])->name("dojos.index");
-
 Route::get("/dojos/create", [DojoController::class, "create"])->name("dojos.create");
-
 Route::get("/dojos/{dojo}", [DojoController::class, "show"])->name("dojos.show");
-
 Route::post("/dojos", [DojoController::class, "store"])->name("dojos.store");
-
 Route::delete("/dojos/{dojo}", [DojoController::class, "destroy"])->name("dojos.destroy");
