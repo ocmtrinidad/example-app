@@ -20,12 +20,14 @@
       <h1 class="header-one ninja-red-color">
         <a href="/">Ninja Network</a>
       </h1>
-      <div class="flex gap-4">
+      <div class="flex items-center gap-4">
         {{-- route('name') calls a named route. --}}
         <a href="{{route('ninjas.index')}}">All Ninjas</a>
         <a href="{{route('ninjas.create')}}">Create New Ninja</a>
         <a href="{{route('dojos.index')}}">All Dojos</a>
         <a href="{{route('dojos.create')}}">Create New Dojo</a>
+        <a class="ninja-red-button gray-color" href="{{route('show.register')}}">Register</a>
+        <a class="ninja-red-button gray-color" href="{{route('show.login')}}">Login</a>
       </div>
     </nav>
   </header>
