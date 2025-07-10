@@ -24,10 +24,15 @@
         {{-- route('name') calls a named route. --}}
         <a href="{{route('ninjas.index')}}">All Ninjas</a>
         <a href="{{route('ninjas.create')}}">Create New Ninja</a>
-        <a href="{{route('dojos.index')}}">All Dojos</a>
-        <a href="{{route('dojos.create')}}">Create New Dojo</a>
+        {{-- <a href="{{route('dojos.index')}}">All Dojos</a> --}}
+        {{-- <a href="{{route('dojos.create')}}">Create New Dojo</a> --}}
         <a class="ninja-red-button gray-color" href="{{route('show.register')}}">Register</a>
         <a class="ninja-red-button gray-color" href="{{route('show.login')}}">Login</a>
+
+        <form action="{{route('logout')}}" method="post">
+          @csrf
+          <button type="submit" class="ninja-red-button gray-color">Logout</button>
+        </form>
       </div>
     </nav>
   </header>
