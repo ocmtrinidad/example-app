@@ -30,7 +30,7 @@ class AuthController extends Controller
         // Login the new user with sessions and cookies.
         Auth::login($user);
 
-        return redirect()->route("ninjas.index");
+        return redirect()->route("ninjas.index")->with("success", "User Created!");
     }
 
     public function login(LoginRequest $request)
