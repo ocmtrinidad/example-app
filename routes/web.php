@@ -1,9 +1,13 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 // Import the NinjaController to use its methods in routes. Use as NinjaController::class.
 use App\Http\Controllers\NinjaController;
 use App\Http\Controllers\DojoController;
+
+Route::get("/register", [AuthController::class, "showRegister"])->name("show.register");
+Route::get("/login", [AuthController::class, "showLogin"])->name("show.login");
 
 // Calls the "index" method of NinjaController in the App\Http\Controllers folder.
 // ->name("ninjas.index") creates a named route that allows you to call this route by name instead of destination.
